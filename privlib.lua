@@ -2017,7 +2017,7 @@ do
 			BackgroundTransparency = 1,
 			BorderSizePixel = 0,
 			BorderColor3 = Color3.new(0, 0, 0),
-			Text = "CryptHub Zaiphon | 1.6.2 | Infinite Ammo Update",
+			Text = "CryptHub Zaiphon | 1.6.2F | Fixes & Improvements",
 			TextColor3 = "Accent",
 			AutoButtonColor = false,
 			FontFace = Library.Font,
