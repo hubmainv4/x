@@ -451,6 +451,17 @@ function ChamObject:Update()
 
 	highlight.Enabled = enabled and options.chams;
 	if highlight.Enabled then
+		local rootPart = character and findFirstChild(character, "HumanoidRootPart");
+		local localRootPart = localPlayer.Character and findFirstChild(localPlayer.Character, "HumanoidRootPart");
+		
+		if rootPart and localRootPart and interface.sharedSettings.limitDistance then
+			local distance = (localRootPart.Position - rootPart.Position).Magnitude;
+			if distance > interface.sharedSettings.maxDistance then
+				highlight.Enabled = false;
+				return;
+			end
+		end
+		
 		highlight.Adornee = character;
 		highlight.FillColor = parseColor(self, options.chamsFillColor[1]);
 		highlight.FillTransparency = options.chamsFillColor[2];
